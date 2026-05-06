@@ -14,7 +14,7 @@ interface Directors extends Teacher {
 }
 
 // Example usage as per requirements
-const teacher3: Teacher = {
+const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
   location: 'London',
