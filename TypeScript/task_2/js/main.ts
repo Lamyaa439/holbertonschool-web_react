@@ -60,9 +60,20 @@ export function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-/**
- * Testing the implementation
- */
-console.log(createEmployee(200));    // Should print: Teacher {}
-console.log(createEmployee(1000));   // Should print: Director {}
-console.log(createEmployee('$500')); // Should print: Director {}
+// --- Task 6 ---
+
+export function isDirector(employee: Director | Teacher): employee is Director {
+  return employee instanceof Director;
+}
+
+export function executeWork(employee: Director | Teacher): void {
+  if (isDirector(employee)) {
+    console.log(employee.workDirectorTasks());
+  } else {
+    console.log(employee.workTeacherTasks());
+  }
+}
+
+// Testing Task 6
+executeWork(createEmployee(200));    // Output: Getting to work
+executeWork(createEmployee(1000));   // Output: Getting to director tasks
