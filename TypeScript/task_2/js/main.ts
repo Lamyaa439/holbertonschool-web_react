@@ -74,6 +74,16 @@ export function executeWork(employee: Director | Teacher): void {
   }
 }
 
-// Testing Task 6
-executeWork(createEmployee(200));    // Output: Getting to work
-executeWork(createEmployee(1000));   // Output: Getting to director tasks
+// --- Task 7 ---
+type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
+console.log(teachClass('Math'));    // Output: Teaching Math
+console.log(teachClass('History')); // Output: Teaching History
